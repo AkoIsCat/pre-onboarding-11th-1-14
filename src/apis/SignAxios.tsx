@@ -31,6 +31,7 @@ export async function signInPostDate(emailValue: string, pwValue: string) {
       password: pwValue,
     });
     if (res.status === 200) {
+      console.log(res);
       return res;
     }
   } catch (error: any) {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useValidation from '../hooks/useValidation';
 import { signPostData } from '../apis/SignAxios';
@@ -10,6 +10,12 @@ interface FormData {
 
 const SignUp = () => {
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem('access_token')) {
+      navigate('/todo');
+    }
+  }, []);
 
   const [formData, setFormData] = useState<FormData>({
     email: '',
