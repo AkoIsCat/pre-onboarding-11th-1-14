@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import TodoList from "./pages/TodoList";
+import Root from "./pages/Root";
 
 // singin, sinup, todo조건에 따른 페이지 이동 및 유지
 function LogInOutCheck(data: string) {
@@ -22,6 +23,7 @@ function LogInOutCheck(data: string) {
 const routerElement = createBrowserRouter([
   {
     path: "/",
+    element: <Root />,
     children: [
       {
         index: true,
