@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 interface EmailStatus {
   message: string;
@@ -19,26 +19,26 @@ const useValidation = (target: Target): [EmailStatus, PasswordStatus] => {
   const { email, password } = target;
 
   const [emailStatus, setEmailStatus] = useState<EmailStatus>({
-    message: '',
+    message: "",
     status: false,
   });
 
   const [passwordStatus, setPasswordStatus] = useState<PasswordStatus>({
-    message: '',
+    message: "",
     status: false,
   });
 
   useEffect(() => {
-    const emailValid = email.includes('@');
+    const emailValid = email.includes("@");
 
     if (!emailValid) {
       setEmailStatus({
-        message: '이메일에 @를 포함시켜주세요.',
+        message: "이메일에 @를 포함시켜주세요.",
         status: false,
       });
     } else {
       setEmailStatus({
-        message: '',
+        message: "",
         status: true,
       });
     }
@@ -49,12 +49,12 @@ const useValidation = (target: Target): [EmailStatus, PasswordStatus] => {
 
     if (!passwordValid) {
       setPasswordStatus({
-        message: '비밀번호는 8자 이상이여야 합니다.',
+        message: "비밀번호는 8자 이상이여야 합니다.",
         status: false,
       });
     } else {
       setPasswordStatus({
-        message: '',
+        message: "",
         status: true,
       });
     }
