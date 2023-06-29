@@ -1,12 +1,8 @@
-import "./App.css";
-import TodoItemGroup from "./components/Todo/TodoItemGroup";
+
+import Routers from "./Routers";
 
 function App() {
-  return (
-    <div>
-      <TodoItemGroup />
-    </div>
-  );
+  return <Routers />;
 }
 
 export default App;
