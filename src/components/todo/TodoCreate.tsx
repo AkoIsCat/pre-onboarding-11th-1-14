@@ -99,7 +99,7 @@ const TodoCreate = () => {
     console.log((inputRef.current as HTMLInputElement).value);
     (inputRef.current as HTMLInputElement).value = "";
     /*
-    const res = await todoCreateApi({todo: (inputRef.current as HTMLInputElement).value});
+    const res = await createTodosList((inputRef.current as HTMLInputElement).value);
     if (res.status === 201 && res.ok) {
       (inputRef.current as HTMLInputElement).value = '';
       const newTodo = res.data;
@@ -107,7 +107,7 @@ const TodoCreate = () => {
     } else if (!res.ok) {
       // 에러 모달? 
       console.error(res.data);
-    }*/
+    } */
   };
 
   return (

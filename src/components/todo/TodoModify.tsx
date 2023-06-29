@@ -71,17 +71,13 @@ const TodoModify = (props: TodoModifyProps) => {
     else {
       console.log((inputRef.current as HTMLInputElement).value);
       /*
-      const res = await todoModifyApi(props.id, {
-        todo: (inputRef.current as HTMLInputElement).value,
-        isCompleted: props.checked,
-      })
+      const res = await updateTodoAxios(props.id, (inputRef.current as HTMLInputElement).value, props.checked);
       if (res.status === 200 && res.ok) {
         // 목록에 넣기
         props.setTodoOpen(fasle);
       } else if (!res.ok) {
         console.error(res.data);
-      }
-    */
+      }*/
     }
   };
 
