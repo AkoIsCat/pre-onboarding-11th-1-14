@@ -1,20 +1,48 @@
 import axios from "axios";
 
 // axios 생성
-export const todoAxios = axios.create({
+const todoAxios = axios.create({
   baseURL: "https://www.pre-onboarding-selection-task.shop/",
   headers: {
     "Content-Type": "application/json",
   },
 });
 
+todoAxios.interceptors.request.use(
+  async (config) => {
+    config.headers["Content-Type"] = "application/json";
+    config.headers.Authorization = `Bearer ${localStorage.getItem(
+      "access_token"
+    )}`;
+    return config;
+  },
+  async (error) => {
+    console.log("에러발생", error);
+    return Promise.reject(error);
+  }
+);
+
+todoAxios.interceptors.response.use(
+  function (response) {
+    return response;
+  },
+  function (error) {
+    return Promise.reject(error);
+  }
+);
+
 // update Todo List API 연결
-export async function updateTodoAxios(id: number, todo: string, isCompleted: boolean) {
+export async function updateTodoAxios(
+  id: string,
+  todo: string,
+  isCompleted: boolean
+) {
   try {
     const res = await todoAxios.put(`/todos/${id}`, {
       todo: todo,
       isCompleted: isCompleted,
     });
+
     if (res.status === 200) return res;
   } catch (error: any) {
     return error;
@@ -22,13 +50,10 @@ export async function updateTodoAxios(id: number, todo: string, isCompleted: boo
 }
 
 // delete Todo List API 연결
-export async function deleteTodoAxios(id: number) {
+export async function deleteTodoAxios(id: string) {
   try {
     const res = await todoAxios.delete(`/todos/${id}`);
-    if (res.status === 204) {
-      const res = await getTodosList();
-      return res;
-    }
+    if (res.status === 204) return { data: true };
   } catch (error: any) {
     return error;
   }
@@ -38,9 +63,7 @@ export async function deleteTodoAxios(id: number) {
 export async function getTodosList() {
   try {
     const res = await todoAxios.get("/todos");
-    if (res.status === 200) {
-      return res;
-    }
+    return res.data;
   } catch (error: any) {
     return error;
   }
@@ -52,7 +75,7 @@ export async function createTodosList(updateValue: string) {
     const res = await todoAxios.post("/todos", {
       todo: updateValue,
     });
-    if (res.status === 201) return true;
+    return res.data;
   } catch (error: any) {
     return error;
   }

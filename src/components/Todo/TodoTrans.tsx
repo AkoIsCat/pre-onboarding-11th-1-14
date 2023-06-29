@@ -1,6 +1,7 @@
 import { useState } from "react";
-
 import TodoItem from "./TodoItem";
+import TodoModify from "./TodoModify";
+// import TodoModify from "./TodoModify";
 
 interface TodoProps {
   id: string;
@@ -37,7 +38,14 @@ export default function TodoTrans({
           deletebutton={deletebutton}
         />
       ) : (
-        <></>
+        <TodoModify
+          id={id}
+          todo={todo}
+          isCompleted={isCompleted}
+          userId={userId}
+          setbuttonStatus={setbuttonStatus}
+          updateCheckTodo={updateCheckTodo}
+        />
       )}
     </div>
   );

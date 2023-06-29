@@ -1,7 +1,7 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import { ChangeEvent, HTMLInputTypeAttribute } from "react";
-import styled, { DefaultTheme } from "styled-components";
 import { MdDone } from "react-icons/md";
+import styled, { DefaultTheme } from "styled-components";
 
 /**
  size : md (todo 수정 input)
@@ -30,55 +30,48 @@ const checkColor: React.CSSProperties = {
   color: theme.checkColor,
 };
 
-export const InputField = ({
-  testname,
-  size,
-  id,
-  type,
-  name,
-  defaultChecked,
-  placeholder,
-  defaultValue,
-  onChange,
-}: InputProps) => {
-  if (type !== "checkbox")
-    return (
-      <InputStyle
-        data-testid={testname}
-        size={size}
-        id={id}
-        type={type}
-        name={name}
-        defaultChecked={defaultChecked}
-        placeholder={placeholder}
-        defaultValue={defaultValue}
-        onChange={onChange}
-      />
-    );
-  else
-    return (
-      <label>
-        <InputCheckBox
-          data-testid={testname}
-          size={size}
-          id={id}
-          type={type}
-          name={name}
-          defaultChecked={defaultChecked}
-          placeholder={placeholder}
-          defaultValue={defaultValue}
-          onChange={onChange}
+export const InputField = forwardRef<HTMLInputElement, InputProps>(
+  (props, ref) => {
+    if (props.type !== "checkbox")
+      return (
+        <InputStyle
+          data-testid={props.testname}
+          size={props.size}
+          id={props.id}
+          type={props.type}
+          name={props.name}
+          defaultChecked={props.defaultChecked}
+          placeholder={props.placeholder}
+          defaultValue={props.defaultValue}
+          onChange={props.onChange}
+          ref={ref}
         />
-        {defaultChecked ? (
-          <Checked defaultChecked={defaultChecked}>
-            <MdDone style={checkColor} />
-          </Checked>
-        ) : (
-          <Checked />
-        )}
-      </label>
-    );
-};
+      );
+    else
+      return (
+        <label>
+          <InputCheckBox
+            data-testid={props.testname}
+            size={props.size}
+            id={props.id}
+            type={props.type}
+            name={props.name}
+            defaultChecked={props.defaultChecked}
+            placeholder={props.placeholder}
+            defaultValue={props.defaultValue}
+            onChange={props.onChange}
+          />
+          {props.defaultChecked ? (
+            <Checked defaultChecked={props.defaultChecked}>
+              <MdDone style={checkColor} />
+            </Checked>
+          ) : (
+            <Checked />
+          )}
+        </label>
+      );
+  }
+);
 
 const InputStyle = styled.input<InputProps>`
   width: ${(props) => {

@@ -1,8 +1,13 @@
 import { useEffect, useState } from "react";
-
+import {
+  getTodosList,
+  updateTodoAxios,
+  deleteTodoAxios,
+} from "../../apis/TodoAxios";
 import TodoTrans from "./TodoTrans";
-//get api 호출 후 todoItem으로 보내주기
-interface TodoProps {
+import TodoCreate from "./TodoCreate";
+
+export interface TodoProps {
   id: string;
   todo: string;
   isCompleted: boolean;
@@ -14,26 +19,25 @@ interface TodoProps {
   ) => Promise<void>;
 }
 
-// todoItem  기본상태
-//todoModify 수정상태
 export default function TodoItemGroup() {
   const [todoItemData, setTodoItemData] = useState<TodoProps[]>([]);
 
   async function getTodoItemRender() {
-    //const todoData = await getTodos();
-    //setTodoItemData(todoData);
+    const todoData = await getTodosList();
+    setTodoItemData(todoData);
   }
+
   useEffect(() => {
     getTodoItemRender();
   }, []);
 
   async function deleteTodoRender(id: string) {
-    //const status = await deleteTodo(id);
-    // if (status.status !== 204) {
-    //   alert("에러가 발생했습니다");
-    //   return;
-    // }
-    setTodoItemData((prev) => prev.filter((todo) => todo.id !== id));
+    const status = await deleteTodoAxios(id);
+    if (status.data === true) {
+      setTodoItemData((prev) => prev.filter((todo) => todo.id !== id));
+    } else {
+      alert("에러입니당");
+    }
   }
 
   const updateCheckTodo = async (
@@ -41,17 +45,30 @@ export default function TodoItemGroup() {
     todo: string,
     isCompleted: boolean
   ) => {
-    isCompleted = !isCompleted;
-    // const status = await updateTodo(id, todo, isCompleted);
-    // if (status.status !== 200) {
-    //   alert("에러가 발생했습니다");
-    //   return;
-    // }
-    getTodoItemRender();
+    const status = await updateTodoAxios(id, todo, isCompleted);
+    if (status.status !== 200) {
+      alert("에러가 발생했습니다");
+      return;
+    }
+    const data = todoItemData.map((todo) => {
+      return todo.id === status.data.id
+        ? {
+            ...todo,
+            isCompleted: status.data.isCompleted,
+            todo: status.data.todo,
+          }
+        : todo;
+    });
+    setTodoItemData(data);
   };
+
   return (
     <>
-      {todoItemData ? (
+      <TodoCreate
+        todoItemData={todoItemData}
+        setTodoItemData={setTodoItemData}
+      />
+      {todoItemData &&
         todoItemData.map((v, i) => (
           <div key={i}>
             <TodoTrans
@@ -63,10 +80,7 @@ export default function TodoItemGroup() {
               deletebutton={deleteTodoRender}
             />
           </div>
-        ))
-      ) : (
-        <></>
-      )}
+        ))}
     </>
   );
 }
