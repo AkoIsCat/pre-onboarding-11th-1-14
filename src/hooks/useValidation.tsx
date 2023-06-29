@@ -10,7 +10,12 @@ interface PasswordStatus {
   status: boolean;
 }
 
-const useValidation = (target: { email: string; password: string }) => {
+interface Target {
+  email: string;
+  password: string;
+}
+
+const useValidation = (target: Target): [EmailStatus, PasswordStatus] => {
   const { email, password } = target;
 
   const [emailStatus, setEmailStatus] = useState<EmailStatus>({
