@@ -1,17 +1,17 @@
-import axios from 'axios';
+import axios from "axios";
 
 // axios 생성
 export const signAxios = axios.create({
-  baseURL: 'https://www.pre-onboarding-selection-task.shop/',
+  baseURL: "https://www.pre-onboarding-selection-task.shop/",
   headers: {
-    'Content-Type': 'application/json',
+    "Content-Type": "application/json",
   },
 });
 
 // 회원가입 API 연결
 export async function signPostData(emailValue: string, pwValue: string) {
   try {
-    const res = await signAxios.post('/auth/signup', {
+    const res = await signAxios.post("/auth/signup", {
       email: emailValue,
       password: pwValue,
     });
@@ -26,12 +26,11 @@ export async function signPostData(emailValue: string, pwValue: string) {
 // 로그인 API 연결
 export async function signInPostDate(emailValue: string, pwValue: string) {
   try {
-    const res = await signAxios.post('/auth/signin', {
+    const res = await signAxios.post("/auth/signin", {
       email: emailValue,
       password: pwValue,
     });
     if (res.status === 200) {
-      console.log(res);
       return res;
     }
   } catch (error: any) {

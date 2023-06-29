@@ -9,11 +9,7 @@ export const todoAxios = axios.create({
 });
 
 // update Todo List API 연결
-export async function updateTodoAxios(
-  id: number,
-  todo: string,
-  isCompleted: boolean
-) {
+export async function updateTodoAxios(id: number, todo: string, isCompleted: boolean) {
   try {
     const res = await todoAxios.put(`/todos/${id}`, {
       todo: todo,
