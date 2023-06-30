@@ -9,7 +9,6 @@ export default function TodoItemGroup() {
 
   async function getTodoItemRender() {
     const todoData = await getTodosList();
-    console.log(todoData);
     if (todoData.status !== 200) {
       alert('목록을 가져오지 못했습니다.');
       return;
