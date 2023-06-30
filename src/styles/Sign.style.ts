@@ -1,29 +1,29 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export interface FormData {
-  email: string;
-  password: string;
+	email: string;
+	password: string;
 }
 
 export const Title = styled.h1`
-  margin-top: 40px;
-  margin-bottom: 40px;
-  font-weight: 700;
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-  text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-weight: 700;
+	font-size: 1.875rem;
+	line-height: 2.25rem;
+	text-align: center;
 `;
 
 export const AuthWrap = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 200px;
-  justify-content: space-around;
+	display: flex;
+	flex-direction: column;
+	height: 200px;
+	justify-content: space-around;
 `;
 
 export const DivMarginBottom = styled.div`
-  margin-bottom: 20px;
-  & div {
-    color: red;
-  }
+	margin-bottom: 20px;
+	& div {
+		color: red;
+	}
 `;
