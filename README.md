@@ -10,7 +10,7 @@
 
 <div align="center">
     <a href="https://pre-onboarding-11th-1-14.vercel.app/"><strong>배포 링크</strong></a> | 
-    <a href="https://www.notion.so/02987ad7d5244ced91e2c91ea40624dd"><strong>Notion</strong></a>
+    <a href="https://rhetorical-fuel-734.notion.site/week-1-7ad75cb0565546caaaf9a31ccb6e4a20"><strong>Notion</strong></a>
 </div>
 <!-- [배포 링크](https://pre-onboarding-11th-1-14.vercel.app/) | [노션](https://www.notion.so/02987ad7d5244ced91e2c91ea40624dd) -->
 
