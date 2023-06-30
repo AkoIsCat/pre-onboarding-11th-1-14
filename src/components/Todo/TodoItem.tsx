@@ -11,7 +11,7 @@ const TodoBox = styled.li`
 
 const TodoTitle = styled.span<{ checked: boolean }>`
   width: 200px;
-  ${(props) => props.checked && `color : #D4D4D8`}
+     ${(props) => props.checked && `color : #D4D4D8`}
 `;
 
 //data를 get으로 받아온 값을 다시 TodoItem 컴포넌트로 넘겨준다.
