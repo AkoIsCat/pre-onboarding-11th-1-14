@@ -19,7 +19,7 @@ export async function signPostData(emailValue: string, pwValue: string) {
       return res;
     }
   } catch (error: any) {
-    return error;
+    return error.response;
   }
 }
 
@@ -34,6 +34,6 @@ export async function signInPostDate(emailValue: string, pwValue: string) {
       return res;
     }
   } catch (error: any) {
-    return error;
+    return error.response;
   }
 }

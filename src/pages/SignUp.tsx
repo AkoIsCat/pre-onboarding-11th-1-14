@@ -30,15 +30,14 @@ const SignUp = () => {
     });
   };
 
-  const onSubmitHandler = (e: React.FormEvent) => {
+  const onSubmitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
-    signPostData(formData.email, formData.password).then((response) => {
-      if (response.status !== 201) {
-        alert("동일한 이메일이 존재합니다");
-        return;
-      }
-      navigate("/signin");
-    });
+    const data = await signPostData(formData.email, formData.password);
+    if (data.status !== 201) {
+      alert("동일한 이메일이 존재합니다");
+      return;
+    }
+    navigate("/signin");
   };
 
   return (

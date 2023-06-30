@@ -1,44 +1,18 @@
-import styled from "styled-components";
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Button } from "../elements/Button";
 import { InputField } from "../elements/InputField";
 import { createTodosList } from "../../apis/TodoAxios";
-
-interface TodoProps {
-  id: string;
-  todo: string;
-  isCompleted: boolean;
-  userId: string;
-  updateCheckTodo: (
-    id: string,
-    todo: string,
-    isCompleted: boolean
-  ) => Promise<void>;
-}
-
-const TodoCreateBase = styled.div`
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 24rem;
-  padding: 32px 32px 72px;
-  background-color: #f1f5f9;
-  border-bottom-left-radius: 0.375rem;
-  border-bottom-right-radius: 0.375rem;
-  border-top: 1px solid #d4d4d8;
-  display: flex;
-  justify-content: space-between;
-`;
-
-type SetTodoItemData = (
-  value: TodoProps[] | ((prevState: TodoProps[]) => TodoProps[])
-) => void;
+import {
+  TodoItemGroupProps,
+  SetTodoItemData,
+  TodoCreateBase,
+} from "./Todo.style";
 
 const TodoCreate = ({
   todoItemData,
   setTodoItemData,
 }: {
-  todoItemData: TodoProps[];
+  todoItemData: TodoItemGroupProps[];
   setTodoItemData: SetTodoItemData;
 }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
@@ -47,13 +21,18 @@ const TodoCreate = ({
   const openHandler = () => {
     setToDoIsOpen(!toDoIsOpen);
   };
+
   const handleToDoCreateApiClick = async () => {
     const res = await createTodosList(
       (inputRef.current as HTMLInputElement).value
     );
-
-    setTodoItemData([...todoItemData, res]);
-    (inputRef.current as HTMLInputElement).value = "";
+    if (res.status === 400) {
+      alert("입력값이 빈 값 입니다.");
+      return;
+    } else if (res.status === 201) {
+      setTodoItemData([...todoItemData, res.data]);
+      (inputRef.current as HTMLInputElement).value = "";
+    }
   };
 
   return (

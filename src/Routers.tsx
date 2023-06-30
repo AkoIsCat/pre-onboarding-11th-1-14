@@ -1,13 +1,14 @@
+import { Suspense, lazy } from "react";
 import {
   createBrowserRouter,
   RouterProvider,
   redirect,
 } from "react-router-dom";
 import Home from "./pages/Home";
-import SignUp from "./pages/SignUp";
-import SignIn from "./pages/SignIn";
-import TodoList from "./pages/TodoList";
 import Root from "./pages/Root";
+const SignUp = lazy(() => import("./pages/SignUp"));
+const SignIn = lazy(() => import("./pages/SignIn"));
+const TodoList = lazy(() => import("./pages/TodoList"));
 
 // singin, sinup, todo조건에 따른 페이지 이동 및 유지
 function LogInOutCheck(data: string) {
@@ -61,5 +62,9 @@ const routerElement = createBrowserRouter([
 ]);
 
 export default function Routers() {
-  return <RouterProvider router={routerElement} />;
+  return (
+    <Suspense fallback={<div>Loding...</div>}>
+      <RouterProvider router={routerElement} />
+    </Suspense>
+  );
 }

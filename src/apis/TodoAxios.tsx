@@ -17,7 +17,7 @@ todoAxios.interceptors.request.use(
     return config;
   },
   async (error) => {
-    console.log("에러발생", error);
+    console.error("에러발생", error);
     return Promise.reject(error);
   }
 );
@@ -45,7 +45,7 @@ export async function updateTodoAxios(
 
     if (res.status === 200) return res;
   } catch (error: any) {
-    return error;
+    return error.response;
   }
 }
 
@@ -53,9 +53,9 @@ export async function updateTodoAxios(
 export async function deleteTodoAxios(id: string) {
   try {
     const res = await todoAxios.delete(`/todos/${id}`);
-    if (res.status === 204) return { data: true };
+    if (res.status === 204) return res;
   } catch (error: any) {
-    return error;
+    return error.response;
   }
 }
 
@@ -63,9 +63,9 @@ export async function deleteTodoAxios(id: string) {
 export async function getTodosList() {
   try {
     const res = await todoAxios.get("/todos");
-    return res.data;
+    if (res.status === 200) return res;
   } catch (error: any) {
-    return error;
+    return error.response;
   }
 }
 
@@ -75,8 +75,8 @@ export async function createTodosList(updateValue: string) {
     const res = await todoAxios.post("/todos", {
       todo: updateValue,
     });
-    return res.data;
+    if (res.status === 201) return res;
   } catch (error: any) {
-    return error;
+    return error.response;
   }
 }

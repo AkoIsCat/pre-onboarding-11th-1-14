@@ -29,18 +29,29 @@ const SignIn = () => {
     });
   };
 
-  const onSubmitHandler = (e: React.FormEvent) => {
+  const onSubmitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
-    signInPostDate(formData.email, formData.password).then((response) => {
-      if (response.status !== 200) {
-        alert("이메일 또는 비밀번호가 올바르지 않습니다.");
-        return;
-      }
-      localStorage.setItem("access_token", response.data.access_token);
-      navigate("/todo");
-      alert("로그인 성공");
-    });
+    const res = await signInPostDate(formData.email, formData.password);
+    if (res.status !== 200) {
+      alert("이메일 또는 비밀번호가 올바르지 않습니다.");
+      return;
+    }
+    localStorage.setItem("access_token", res.data.access_token);
+    navigate("/todo");
   };
+
+  // const onSubmitHandler = (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   signInPostDate(formData.email, formData.password).then((response) => {
+  //     if (response.status !== 200) {
+  //       alert("이메일 또는 비밀번호가 올바르지 않습니다.");
+  //       return;
+  //     }
+  //     localStorage.setItem("access_token", response.data.access_token);
+  //     navigate("/todo");
+  //     alert("로그인 성공");
+  //   });
+  // };
 
   return (
     <S.AuthWrap>

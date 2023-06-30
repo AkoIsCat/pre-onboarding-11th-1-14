@@ -1,20 +1,20 @@
 import { useState } from "react";
+import { TodoTransProps } from "./Todo.style";
 import TodoItem from "./TodoItem";
 import TodoModify from "./TodoModify";
-// import TodoModify from "./TodoModify";
 
-interface TodoProps {
-  id: string;
-  todo: string;
-  isCompleted: boolean;
-  userId: string;
-  updateCheckTodo: (
-    id: string,
-    todo: string,
-    isCompleted: boolean
-  ) => Promise<void>;
-  deletebutton: (id: string) => void;
-}
+// interface TodoProps {
+//   id: string;
+//   todo: string;
+//   isCompleted: boolean;
+//   userId: string;
+//   updateCheckTodo: (
+//     id: string,
+//     todo: string,
+//     isCompleted: boolean
+//   ) => Promise<void>;
+//   deletebutton: (id: string) => void;
+// }
 
 export default function TodoTrans({
   id,
@@ -23,7 +23,7 @@ export default function TodoTrans({
   userId,
   updateCheckTodo,
   deletebutton,
-}: TodoProps) {
+}: TodoTransProps) {
   const [buttonStatus, setbuttonStatus] = useState<Boolean>(false);
   return (
     <div>

@@ -1,27 +1,7 @@
 import { useRef } from "react";
 import { InputField } from "../elements/InputField";
 import { Button } from "../elements/Button";
-import { styled } from "styled-components";
-
-const TodoBox = styled.li`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 12px;
-`;
-
-interface TodoModifyProps {
-  id: string;
-  todo: string;
-  isCompleted: boolean;
-  userId: string;
-  setbuttonStatus: (active: boolean) => void;
-  updateCheckTodo: (
-    id: string,
-    todo: string,
-    isCompleted: boolean
-  ) => Promise<void>;
-}
+import { TodoBox, TodoModifyProps } from "./Todo.style";
 
 const TodoModify = ({
   id,
