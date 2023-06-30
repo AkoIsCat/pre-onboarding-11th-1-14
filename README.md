@@ -1,14 +1,15 @@
-# 원티드 프리온보딩 11차 1주차 14팀 멘토과제
+# 원티드 프리온보딩 11차 1주차 14팀 멘토 과제
 
 <div align=right>2023.06.27 - 2023.06.30</div>
 
 <br>
 
-# About
+## About
 
-사전과제로 진행한 Todo List에서 동료학습을 통해 Best Practice를 만든 프로젝트입니다.
+<br>
 
 <div align="center">
+    <p> <a href="https://github.com/walking-sunset/selection-task">사전 과제</a>로 진행한 Todo List에서 동료학습을 통해 Best Practice를 만든 프로젝트입니다. </p>
     <a href="https://pre-onboarding-11th-1-14.vercel.app/"><strong>배포 링크</strong></a> | 
     <a href="https://rhetorical-fuel-734.notion.site/week-1-7ad75cb0565546caaaf9a31ccb6e4a20"><strong>Notion</strong></a>
 </div>
@@ -18,13 +19,19 @@
 
 ## Team
 
-[장윤신](https://github.com/yun-sin)(팀장), [김은혜](https://github.com/AkoIsCat), [박진현](https://github.com/rondido), [한지윤](https://github.com/jyhan14), [박재우](https://github.com/codingjwp), [박하린](https://github.com/khakaa)
+<!-- [장윤신](https://github.com/yun-sin)(팀장), [김은혜](https://github.com/AkoIsCat), [박진현](https://github.com/rondido), [한지윤](https://github.com/jyhan14), [박재우](https://github.com/codingjwp), [박하린](https://github.com/khakaa) -->
+<br>
+
+<div align="center">
+    팀장 <a href="https://github.com/yun-sin">장윤신</a> , <a href="https://github.com/AkoIsCat">김은혜</a> , <a href="https://github.com/rondido">박진현</a> , <a href="https://github.com/jyhan14">한지윤</a> , <a href="https://github.com/codingjwp">박재우</a> , <a href="https://github.com/khakaa">박하린</a>
+</div>
 
 <br>
 
 ## 기술 스택
 
 <br>
+
 <div align="center"> 
 <img alt="react" src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black">
 <img alt="typescript" src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white">
@@ -32,6 +39,8 @@
 <img alt="axios" src ="https://img.shields.io/badge/axios-black.svg?&style=for-the-badge&logo=axios&logoColor=white"/>
 <img alt="styled-component" src="https://img.shields.io/badge/styledComponents-DB7093?style=for-the-badge&logo=styledComponents&logoColor=white">
 </div>
+
+<br>
 <br>
 
 ## 회의 히스토리
@@ -45,9 +54,6 @@
 
 <br>
 
-## [사전 과제](https://github.com/walking-sunset/selection-task)
-
-<br>
 
 ## 파트 분담
 
