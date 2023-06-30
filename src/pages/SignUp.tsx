@@ -1,17 +1,17 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import useValidation from "../hooks/useValidation";
-import { signPostData } from "../apis/SignAxios";
-import { Button } from "../components/elements/Button";
-import { InputField } from "../components/elements/InputField";
-import * as S from "../styles/Sign.style";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import useValidation from '../hooks/useValidation';
+import { signPostData } from '../apis/SignAxios';
+import { Button } from '../components/elements/Button';
+import { InputField } from '../components/elements/InputField';
+import * as S from '../styles/Sign.style';
 
 const SignUp = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState<S.FormData>({
-    email: "",
-    password: "",
+    email: '',
+    password: '',
   });
 
   const [emailStatus, passwordStatus] = useValidation(formData);
@@ -30,15 +30,14 @@ const SignUp = () => {
     });
   };
 
-  const onSubmitHandler = (e: React.FormEvent) => {
+  const onSubmitHandler = async (e: React.FormEvent) => {
     e.preventDefault();
-    signPostData(formData.email, formData.password).then((response) => {
-      if (response.status !== 201) {
-        alert("동일한 이메일이 존재합니다");
-        return;
-      }
-      navigate("/signin");
-    });
+    const data = await signPostData(formData.email, formData.password);
+    if (data.status !== 201) {
+      alert('동일한 이메일이 존재합니다');
+      return;
+    }
+    navigate('/signin');
   };
 
   return (
@@ -47,31 +46,30 @@ const SignUp = () => {
       <S.DivMarginBottom>
         <label>이메일</label>
         <InputField
-          type="email"
-          testname="email-input"
+          type='email'
+          testname='email-input'
           onChange={onChangeEmailHandler}
-          size="full"
+          size='full'
         />
         <div>{emailStatus.message}</div>
       </S.DivMarginBottom>
       <S.DivMarginBottom>
         <label>비밀번호</label>
         <InputField
-          type="password"
-          testname="password-input"
+          type='password'
+          testname='password-input'
           onChange={onChangePasswordHandler}
-          size="full"
+          size='full'
         />
         <div>{passwordStatus.message}</div>
       </S.DivMarginBottom>
       <div>
         <Button
-          type="submit"
-          testname="signup-button"
+          type='submit'
+          testname='signup-button'
           disabled={!(emailStatus.status && passwordStatus.status)}
           onClick={onSubmitHandler}
-          size="lr"
-        >
+          size='lr'>
           회원가입
         </Button>
       </div>

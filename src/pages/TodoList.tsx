@@ -1,13 +1,7 @@
-// import TodoCreate from "../components/Todo/TodoCreate";
-import TodoItemGroup from "../components/Todo/TodoItemGroup";
+import TodoItemGroup from '../components/Todo/TodoItemGroup';
 
 const TodoList = () => {
-  return (
-    <>
-      <TodoItemGroup />
-      {/* <TodoCreate /> */}
-    </>
-  );
+  return <TodoItemGroup />;
 };
 
 export default TodoList;

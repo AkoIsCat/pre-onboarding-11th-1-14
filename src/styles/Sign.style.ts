@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export interface FormData {
   email: string;
@@ -17,7 +17,6 @@ export const Title = styled.h1`
 export const AuthWrap = styled.div`
   display: flex;
   flex-direction: column;
-  /* height: 200px; */
   justify-content: space-around;
 `;
 

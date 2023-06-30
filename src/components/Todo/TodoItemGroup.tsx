@@ -1,30 +1,20 @@
-import { useEffect, useState } from "react";
-import {
-  getTodosList,
-  updateTodoAxios,
-  deleteTodoAxios,
-} from "../../apis/TodoAxios";
-import TodoTrans from "./TodoTrans";
-import TodoCreate from "./TodoCreate";
-
-export interface TodoProps {
-  id: string;
-  todo: string;
-  isCompleted: boolean;
-  userId: string;
-  updateCheckTodo: (
-    id: string,
-    todo: string,
-    isCompleted: boolean
-  ) => Promise<void>;
-}
+import { useEffect, useState } from 'react';
+import { getTodosList, updateTodoAxios, deleteTodoAxios } from '../../apis/TodoAxios';
+import { TodoItemGroupProps } from './Todo.style';
+import TodoTrans from './TodoTrans';
+import TodoCreate from './TodoCreate';
 
 export default function TodoItemGroup() {
-  const [todoItemData, setTodoItemData] = useState<TodoProps[]>([]);
+  const [todoItemData, setTodoItemData] = useState<TodoItemGroupProps[]>([]);
 
   async function getTodoItemRender() {
     const todoData = await getTodosList();
-    setTodoItemData(todoData);
+    console.log(todoData);
+    if (todoData.status !== 200) {
+      alert('목록을 가져오지 못했습니다.');
+      return;
+    }
+    setTodoItemData(todoData.data);
   }
 
   useEffect(() => {
@@ -32,25 +22,21 @@ export default function TodoItemGroup() {
   }, []);
 
   async function deleteTodoRender(id: string) {
-    const status = await deleteTodoAxios(id);
-    if (status.data === true) {
-      setTodoItemData((prev) => prev.filter((todo) => todo.id !== id));
-    } else {
-      alert("에러입니당");
-    }
-  }
-
-  const updateCheckTodo = async (
-    id: string,
-    todo: string,
-    isCompleted: boolean
-  ) => {
-    const status = await updateTodoAxios(id, todo, isCompleted);
-    if (status.status !== 200) {
-      alert("에러가 발생했습니다");
+    const res = await deleteTodoAxios(id);
+    if (res.status !== 204) {
+      alert('삭제 목록을 찾지 못했습니다.');
       return;
     }
-    const data = todoItemData.map((todo) => {
+    setTodoItemData(prev => prev.filter(todo => todo.id !== id));
+  }
+
+  const updateCheckTodo = async (id: string, todo: string, isCompleted: boolean) => {
+    const status = await updateTodoAxios(id, todo, isCompleted);
+    if (status.status !== 200) {
+      alert('입력 값이 없습니다.');
+      return;
+    }
+    const data = todoItemData.map(todo => {
       return todo.id === status.data.id
         ? {
             ...todo,
@@ -64,10 +50,7 @@ export default function TodoItemGroup() {
 
   return (
     <>
-      <TodoCreate
-        todoItemData={todoItemData}
-        setTodoItemData={setTodoItemData}
-      />
+      <TodoCreate todoItemData={todoItemData} setTodoItemData={setTodoItemData} />
       {todoItemData &&
         todoItemData.map((v, i) => (
           <div key={i}>
