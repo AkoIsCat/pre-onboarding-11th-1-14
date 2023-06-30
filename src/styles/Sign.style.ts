@@ -17,7 +17,7 @@ export const Title = styled.h1`
 export const AuthWrap = styled.div`
   display: flex;
   flex-direction: column;
-  height: 200px;
+  /* height: 200px; */
   justify-content: space-around;
 `;
 
