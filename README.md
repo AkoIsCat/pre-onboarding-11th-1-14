@@ -334,7 +334,7 @@
 
 - Axios 개별 파일 생성.
 - 에러 부분 → catch 문에서 발생하는 에러 만 처리
-- header → 다음 기회
+- header →  axios interceptor를 통해 토큰 넣어주기
 
 ---
 
