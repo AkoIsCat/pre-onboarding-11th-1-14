@@ -2,6 +2,8 @@
 
 2023.06.27~ 2023.06.30
 
+[배포 링크](https://pre-onboarding-11th-1-14.vercel.app/)
+
 <br>
 
 ## 팀
@@ -23,30 +25,15 @@
 
 <br>
 
-## 1차 회의
+## 회의
 
-- 6월 27일 오후 6시 45분
-- 팀장 : 장윤신
-- 팀원 : 박하린, 김은혜 , 박재우, 박진현, 한지윤
+| 회의  | 일시 |  회의 내용 |
+| --- | --- | --- |
+| 1차 | 6월 27일 오후 6시 45분| 팀장 선정 (장윤신) <br> 각자 사전 과제에서 구현한 기능들 중에서 Best Practice를 선별하기 위해 구현 기능을 문서화 해오기 |
+| 2차 | 6월 28일 오후 3시  | Best Practice 선별 <br> Commit message, eslint, prettier 규칙 결정 <br> 협업 방법 결정 (파일별로 분배) <br> - 각자 브랜치 생성 후 각자 맡은 부분 구현해오기 |
+| 3차 | 6월 29일 오후 9시 | 각자 구현한 코드 PR & Merge 후 코드 재구성 |
+| 4차 | 6월 30일 오후 5시 30분 | - Notion & Read me 수정 <br> - 코드 리팩토링 <br> - 배포 |
 
-<br>
-
-## 2차 회의
-
-- 6월 28일 오후 3시
-- 회의 전까지 문서화 후 Best Practice 선별
-
-<br>
-
-## 회의 내용
-
-- git Commit 문서화
-- ESLint
-- Perttier
-- 사용 라이브러리, CSS
-- 배
-
----
 
 <br>
 
@@ -79,20 +66,35 @@
 <br>
 <br>
 
-# Best Practice
+## Best Practice
+
+| 팀원 | Best Practice |
+| --- | --- |
+| 사용 라이브러리 | Typescript, Styled-components,Axios, React-router-dom,React-icon,Eslint,Prettierrc,Husky |
+| 폴더 구조 | https://www.notion.so/Best-Practice-0edf8b91232f438ebc85221de24fc0a3?pvs=21 |
+| 배포 | vercel |
+| 유효성 검사 | • useValidation 커스텀훅 분리 <br> • 메시지 출력(실시간) <br> • 버튼 disabled |
+| 리다이렉트 | React-router-dom 기능인 loader 속성을 사용 <br> → 로그인 여부에 따라 redirect 사용 |
+| Todo API | • Axios 개별 파일 생성. <br> • 에러 부분 → alert으로 처리 <br> • header → axios interceptor를 통해 토큰 넣어주기 |
+
+---
+
+<br>
+
+## Best Practice 선정 과정
 
 <br>
 
 ## 사용 라이브러리
 
-| 팀원   | 기능                                                                            | 비고 |
-| ------ | ------------------------------------------------------------------------------- | ---- |
-| 김은혜 | React-Router-Dom , styled-components                                            |      |
-| 박진현 | React-routet-dom,styled-components, axios                                       |      |
-| 장윤신 | react-router-dom, styled-components, axios                                      |      |
-| 한지윤 | react-router-dom, styled-components, axios                                      |      |
-| 박재우 | 지정 라이브러리[ react, react-router-dom ], 추가 라이브러리[ axios, typescript] |      |
-| 박하린 | axios 1.4.0, react-router-dom 6.13.0                                            |      |
+| 팀원   | 기능                                                                            |
+| ------ | ------------------------------------------------------------------------------- |
+| 김은혜 | React-Router-Dom , styled-components                                            |
+| 박진현 | React-routet-dom,styled-components, axios                                       |      
+| 장윤신 | react-router-dom, styled-components, axios                                      |     
+| 한지윤 | react-router-dom, styled-components, axios                                      |      
+| 박재우 | 지정 라이브러리[ react, react-router-dom ], 추가 라이브러리[ axios, typescript] |      
+| 박하린 | axios 1.4.0, react-router-dom 6.13.0                                            |      
 
 ### 👍 Best Practice
 
@@ -121,14 +123,14 @@
 
 ## 스타일링
 
-| 팀원   | 기능                                 | 비고 |
-| ------ | ------------------------------------ | ---- |
-| 김은혜 | Styled-components                    |      |
-| 박진현 | Styled-components                    |      |
-| 장윤신 | Styled-components                    |      |
-| 한지윤 | Styled-components                    |      |
-| 박재우 | css module                           |      |
-| 박하린 | tailwindcss 3.3.2, react-icons 4.9.0 |      |
+| 팀원   | 기능                                 |
+| ------ | ------------------------------------ | 
+| 김은혜 | Styled-components                    |     
+| 박진현 | Styled-components                    |      
+| 장윤신 | Styled-components                    |      
+| 한지윤 | Styled-components                    |     
+| 박재우 | css module                           |      
+| 박하린 | tailwindcss 3.3.2, react-icons 4.9.0 |      
 
 ### 👍 Best Practice
 
@@ -143,14 +145,14 @@
 
 ## 배포
 
-| 팀원   | 기능    | 비고 |
-| ------ | ------- | ---- |
-| 김은혜 | netlify |      |
-| 박진현 | netlify |      |
-| 장윤신 | netlify |      |
-| 한지윤 | vercel  |      |
-| 박재우 | vercel  |      |
-| 박하린 | vercel  |      |
+| 팀원   | 기능    |
+| ------ | ------- | 
+| 김은혜 | netlify |      
+| 박진현 | netlify |      
+| 장윤신 | netlify |      
+| 한지윤 | vercel  |      
+| 박재우 | vercel  |      
+| 박하린 | vercel  |      
 
 ### 👍 Best Practice
 
@@ -163,49 +165,59 @@
 
 ## 폴더 구조
 
-| 팀원   | 기능                                               | 비고 |
-| ------ | -------------------------------------------------- | ---- |
-| 김은혜 | component, page, store, api                        |      |
-| 박진현 | components.apis,containers,lib,pages,tokens        |      |
-| 장윤신 | components, pages, styles                          |      |
-| 한지윤 | components, pages, shared                          |      |
-| 박재우 | src → folder: assts, async, components, css, pages |      |
-| 박하린 | api, components, pages, routes, utils              |      |
+| 팀원   | 기능                                               | 
+| ------ | -------------------------------------------------- | 
+| 김은혜 | component, page, store, api                        |      
+| 박진현 | components.apis,containers,lib,pages,tokens        |     
+| 장윤신 | components, pages, styles                          |      
+| 한지윤 | components, pages, shared                          |      
+| 박재우 | src → folder: assts, async, components, css, pages |      
+| 박하린 | api, components, pages, routes, utils              |      
 
 ### 👍 Best Practice
 
+
 ```
-- components → 컴포넌트
-    - elements
-        - Button.tsx
-        - InputField.tsx
-    - Todo
-        - TodoItemGroup.tsx (목록 전체)
-        - TodoItem.tsx (목록 1개)
-        - TodoModify.tsx (수정)
-        - TodoCreate.tsx (생성)
-
-- hooks → 훅
-    - useValidation.tsx (유효성 검사 → 버튼 활성화 훅)
-
-- styles → 공용 UI
-    - GlobalStyles.tsx (reset)
-    - Layout.tsx
-
-- pages → 페이지 UI
-    - Home.tsx  (첫 페이지)
-    - SignUp.tsx (회원가입)
-    - SignIn.tsx (로그인)
-    - TodoList.tsx (할 일 목록)
-
-- api → axios api 통신
-    - SignAxios.tsx
-    - TodoAxios.tsx
-
-- App.tsx
-- Routers.tsx
-- eslint
-- prettier.ts
+├── README.md
+├── package-lock.json
+├── package.json
+├── public
+│   ├── favicon.ico
+│   ├── index.html
+│   └── robots.txt
+├── src
+│   ├── App.tsx
+│   ├── Routers.tsx
+│   ├── apis
+│   │   ├── AxiosInstance.ts
+│   │   ├── SignAxios.ts
+│   │   └── TodoAxios.ts
+│   ├── components
+│   │   ├── Todo
+│   │   │   ├── Todo.style.ts
+│   │   │   ├── TodoCreate.tsx
+│   │   │   ├── TodoItem.tsx
+│   │   │   ├── TodoItemGroup.tsx
+│   │   │   ├── TodoModify.tsx
+│   │   │   └── TodoTrans.tsx
+│   │   └── elements
+│   │       ├── Button.tsx
+│   │       └── InputField.tsx
+│   ├── hooks
+│   │   └── useValidation.tsx
+│   ├── index.tsx
+│   ├── pages
+│   │   ├── Home.tsx
+│   │   ├── Root.tsx
+│   │   ├── SignIn.tsx
+│   │   ├── SignUp.tsx
+│   │   └── TodoList.tsx
+│   ├── react-app-env.d.ts
+│   └── styles
+│       ├── GlobalStyles.tsx
+│       ├── Layout.tsx
+│       └── Sign.style.ts
+└── tsconfig.json
 ```
 
 > 참고자료
@@ -222,14 +234,14 @@
 
 ## 협업 방법
 
-| 팀원   | 의견                                                   |     |
-| ------ | ------------------------------------------------------ | --- |
-| 김은혜 | 파트별로 분량을 정한 뒤에 하나의 애플리케이션으로 합침 |     |
-| 박진현 | 잘 모르겠어요…………….. ㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜㅜ        |     |
-| 장윤신 | 파일 별로 분담하여 하나의 레포지토리에 커밋            |     |
-| 한지윤 | 파트별로 나눠서 합치기                                 |     |
-| 박재우 |                                                        |     |
-| 박하린 | 파트별로                                               |     |
+| 팀원   | 의견                                                   |     
+| ------ | ------------------------------------------------------ | 
+| 김은혜 | 파트별로 분량을 정한 뒤에 하나의 애플리케이션으로 합침 |   
+| 박진현 |       |     
+| 장윤신 | 파일 별로 분담하여 하나의 레포지토리에 커밋            |     
+| 한지윤 | 파트별로 나눠서 합치기                                 |     
+| 박재우 |                                                        |     
+| 박하린 | 파트별로                                               |     
 
 ---
 
@@ -237,14 +249,14 @@
 
 ## 유효성 검사
 
-| 팀원   | 기능                                                                                                                                                                                                                                                     | 비고 |
-| ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
-| 김은혜 | id와 password를 저장할 state와 유효성 체크 변수를 생성 후 if문을 이용해 id에 @가 포함되어 있는지, password가 8자리 이상인지 체크함. 별도 커스텀 훅 사용 X                                                                                                |      |
-| 박진현 | lib/useValidation에서 유효성 검사를 진행하고 비 구조화 할당으로 email과 password의 상태를 전달받는다. <br> 1. email에는 includes를 사용하여 @ 있는지 여부를 판단하고 true/false 반환 <br> 2. password는 길이를 이용하여 검사하고 불리언 타입으로 반환    |      |
-| 장윤신 | 1. input에 onChange 이벤트 삽입하여 state 변경 <br> 2. useEffect에서 email과 password가 바뀔때마다 검사 실행 <br> 3. 검사결과에 따라 button의 disabled 속성값 true/false로 변경                                                                          |      |
-| 한지윤 | 유효성 검사가 필요한 컴포넌트(Signup, Signin)에 바로 작성 <br> - test() 사용하여 정규표현식 일치 여부에 따라 유효성 검사 <br> - onChangeHandler 이용해 입력 필드에서 값이 변경될 때마다 유효성 검사를 수행                                               |      |
-| 박재우 | 1. 이메일 유효성 검사 → HTML5 기능 사용 브라우저에서 검사 type=”email” <br> 2. 비밀번호 길이 유효성 검사 → HTML5 기능 사용 브라우저에서 검사 minLength(8) <br>3. 버튼 disable 상태 변화 → onChange 이벤트에서 event.target.validity.valid 로 유효성 판단 |      |
-| 박하린 | - utils 폴더에 validatinCheck 함수 따로 분리 <br> - Signup.js , Signin.js 페이지에서 함수 import 하여 유효성 검사 후, btnState 변경 <br> \* email, password의 input tag onChange 이벤트 발생할 때마다 함수 실행됩니다. <br> → useEffect                  |      |
+| 팀원   | 기능  |
+| ------ | --- | 
+| 김은혜 | id와 password를 저장할 state와 유효성 체크 변수를 생성 후 if문을 이용해 id에 @가 포함되어 있는지, password가 8자리 이상인지 체크함. 별도 커스텀 훅 사용 X   |      
+| 박진현 | lib/useValidation에서 유효성 검사를 진행하고 비 구조화 할당으로 email과 password의 상태를 전달받는다. <br> 1. email에는 includes를 사용하여 @ 있는지 여부를 판단하고 true/false 반환 <br> 2. password는 길이를 이용하여 검사하고 불리언 타입으로 반환    |      
+| 장윤신 | 1. input에 onChange 이벤트 삽입하여 state 변경 <br> 2. useEffect에서 email과 password가 바뀔때마다 검사 실행 <br> 3. 검사결과에 따라 button의 disabled 속성값 true/false로 변경                                                                          |      
+| 한지윤 | 유효성 검사가 필요한 컴포넌트(Signup, Signin)에 바로 작성 <br> - test() 사용하여 정규표현식 일치 여부에 따라 유효성 검사 <br> - onChangeHandler 이용해 입력 필드에서 값이 변경될 때마다 유효성 검사를 수행                                               |      
+| 박재우 | 1. 이메일 유효성 검사 → HTML5 기능 사용 브라우저에서 검사 type=”email” <br> 2. 비밀번호 길이 유효성 검사 → HTML5 기능 사용 브라우저에서 검사 minLength(8) <br>3. 버튼 disable 상태 변화 → onChange 이벤트에서 event.target.validity.valid 로 유효성 판단 |      
+| 박하린 | - utils 폴더에 validatinCheck 함수 따로 분리 <br> - Signup.js , Signin.js 페이지에서 함수 import 하여 유효성 검사 후, btnState 변경 <br> \* email, password의 input tag onChange 이벤트 발생할 때마다 함수 실행됩니다. <br> → useEffect                  |      
 
 ### 👍 Best Practice
 
@@ -255,37 +267,19 @@
 
 ---
 
-<br>
-
-## 경로 이동 (회원가입, 로그인 시)
-
-| 팀원   | 기능                                   | 비고 |
-| ------ | -------------------------------------- | ---- |
-| 김은혜 | useNavigate 사용                       |      |
-| 박진현 | react-router-dom useNavigate 사용      |      |
-| 장윤신 | react-router-dom의 useNavigate 사용    |      |
-| 한지윤 | react-router-dom의 useNavigate 사용    |      |
-| 박재우 | react-router-dom의 훅 useNavigate 사용 |      |
-| 박하린 | useNavigate 훅을 사용                  |      |
-
-### 👍 Best Practice
-
-- useNavigate
-
----
 
 <br>
 
 ## 로그인 여부에 따른 리다이렉트
 
-| 팀원   | 기능                                                                                                                                                                         | 비고 |
-| ------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
-| 김은혜 | useEffect로 최초 렌더링 시 토큰 여부를 확인한 후 존재하면 todo 페이지로 바로 이동, <br> 토큰이 없는 상태로 todolist 페이지에 접근하려고 한다면 회원가입 페이지로 이동        |      |
-| 박진현 | Container file이 아닌 page 파일에서 token 여부를 확인하여 첫 렌더링 시에 리다이렉트 처리 <br> api 통신 후 반환 받은 상태 코드에 따라 리다이렉트 처리                         |      |
-| 장윤신 | 1. 로그인시 로컬스토리지에 로그인정보 저장 <br> 2. 페이지 마운트시 로컬스토리지 확인 <br> 3. react-router-dom의 Navigate 사용                                                |      |
-| 한지윤 | react-router-dom의 BrowserRouter를 사용 <br> - Router 컴포넌트 내에서 accessToken 유무를 확인 <br> - Navigate 컴포넌트 속성 중 하나인 replace 를 사용하여 새로운 경로로 대체 |      |
-| 박재우 | react-router-dom 기능인 loader 속성을 사용 로그인 여부에 따라 redirect 사용                                                                                                  |      |
-| 박하린 | PrivateRoute 컴포넌트 구현하여 토큰 여부에 따라 리다이렉트 처리                                                                                                              |      |
+| 팀원   | 기능   |
+| ------ | ---- |
+| 김은혜 | useEffect로 최초 렌더링 시 토큰 여부를 확인한 후 존재하면 todo 페이지로 바로 이동, <br> 토큰이 없는 상태로 todolist 페이지에 접근하려고 한다면 회원가입 페이지로 이동        |      
+| 박진현 | Container file이 아닌 page 파일에서 token 여부를 확인하여 첫 렌더링 시에 리다이렉트 처리 <br> api 통신 후 반환 받은 상태 코드에 따라 리다이렉트 처리                         |      
+| 장윤신 | 1. 로그인시 로컬스토리지에 로그인정보 저장 <br> 2. 페이지 마운트시 로컬스토리지 확인 <br> 3. react-router-dom의 Navigate 사용                                                |      
+| 한지윤 | react-router-dom의 BrowserRouter를 사용 <br> - Router 컴포넌트 내에서 accessToken 유무를 확인 <br> - Navigate 컴포넌트 속성 중 하나인 replace 를 사용하여 새로운 경로로 대체 |      
+| 박재우 | react-router-dom 기능인 loader 속성을 사용 로그인 여부에 따라 redirect 사용                                                                                                  |      
+| 박하린 | PrivateRoute 컴포넌트 구현하여 토큰 여부에 따라 리다이렉트 처리                                                                                                              |      
 
 ### 👍 Best Practice
 
@@ -304,14 +298,14 @@
 
 ## Todo API (생성, 읽기, 수정, 삭제)
 
-| 팀원   | 기능                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | 비고                                           |
-| ------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------- |
-| 김은혜 | context api 사용, api 요청 분리 <br> - 생성 : 추가하는 api 요청 후 리듀서로 state에 추가. 스프레드 연산자를 사용해서 기존 배열에 추가 <br> - 읽기 : 투두 페이지 최초 렌더링 시 get api를 사용해 불러옴. 리듀서를 이용 해 컨텍스트 state에 할당. <br> - 수정 : api 요청에 수정된 값을 같이 요청 후 state 수정. state 배열을 map으로 순회하며 수정된 item의 id를 찾으면 수정된 내용을 변경 <br> - 삭제 : 해당 item의 id를 api와 같이 요청을 보내 삭제 후 state에서도 삭제. filter를 이용해 기존 item과 삭제할 item의 id를 대조해 id가 다른 경우에 배열에서 제외합니다.                                                                                     |                                                |
-| 박진현 | apis/Api.js <br> Api.js에서 파일에서는 실질적으로 수행되는 api 통신 수행 <br> apis/apiClient.js <br> apiClient.js에서는 axios.create를 이용하였으며 반복되는 URL 주소와 ContentType등을 분리하여 재사용성을 고려함.                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                                |
-| 장윤신 | - 읽기 : useEffect 사용 todo 페이지 마운트시 getTodos(토큰) 실행 → setTodoList                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | api 요청 분리 하지 않음 <br> 불필요한 then사용 |
-| 한지윤 | 자세한 코드 설명 : 한지윤 (https://www.notion.so/354f1ea96f8d4278b85e0c5a977356a9?pvs=21) <br> - api 요청부분을 분리하지 않고 한 컴포넌트 내에서 요청 수행 <br> (생성, 읽기, 수정, 삭제의 api 요청부분이 전부 TodoList.jsx에 있습니다. 가독성 측면에서 좋지 않은 것 같습니다.) <br> - 생성: addTodo : 서버로 새로운 Todo를 보내준다.(POST) <br> - 읽기: fetchTodos : 서버에서 Todo 목록을 불러온다.(GET) <br> - 수정: toggleComplete, modifyTodo(PUT) <br> → 코드 중복을 줄이기 위해 toggleComplete 함수와 modifyTodo 함수의 중복 코드를 분리하여 재사용 가능한 함수로 작성하는게 더 나을 것 같습니다. <br> - 삭제: deleteTodo 함수에서 서버로 삭제 요청 |                                                |
-| 박재우 | customAxios 파일로 Api 요청 부분을 분리. <br> - 생성(POST) : createTodosList로 url = /todos data = todo 로 전달 <br> - 읽기(GET) : getTodosList로 url = /todos 로 전달 <br> todo 페이지로 이동시 useEffect로 <br> —————————————————————————————— <br> loginAxios.defaults.headers.common["Authorization"] = `Bearer ${localStorage.getItem('jwtToken')}`; <br> —————————————————————————————— <br> Authorization을 추가 한 후 실행 <br> - 수정(PUT) : updateTodoAxios로 url = /todos/${id} data = todo, isCompleted로 전달 <br> - 삭제(DELETE) : deleteTodoAxios url = /todos/${id} 로 전                                                                |                                                |
-| 박하린 | [api 요청] <br> - axios instance 생성하여 api 요청 <br> - 토큰 필요한 instance인 경우 axios interceptors를 사용 <br> - 생성 : api/TodoApi 내의 createTodoApi를 요청, todoList에 response data 추가 <br> - 읽기 : /todo로 들어와서 Todo 페이지 렌더링 될 때 api/TodoApi 내의 getTodoApi를 요청, todoList setState <br> - 수정 : api/TodoApi 내의 updateTodoApi 요청하여 수정, map 메소드로 해당 객체 수정 <br> - 삭제 : api/TodoApi 내의 deleteTodoApi 요청하여 삭제, todoList filter하여 setState                                                                                                                                                        |                                                |
+| 팀원   | 기능  | 
+| ------ | ---- |
+| 김은혜 | context api 사용, api 요청 분리 <br> - 생성 : 추가하는 api 요청 후 리듀서로 state에 추가. 스프레드 연산자를 사용해서 기존 배열에 추가 <br> - 읽기 : 투두 페이지 최초 렌더링 시 get api를 사용해 불러옴. 리듀서를 이용 해 컨텍스트 state에 할당. <br> - 수정 : api 요청에 수정된 값을 같이 요청 후 state 수정. state 배열을 map으로 순회하며 수정된 item의 id를 찾으면 수정된 내용을 변경 <br> - 삭제 : 해당 item의 id를 api와 같이 요청을 보내 삭제 후 state에서도 삭제. filter를 이용해 기존 item과 삭제할 item의 id를 대조해 id가 다른 경우에 배열에서 제외합니다.     |                                                
+| 박진현 | apis/Api.js <br> Api.js에서 파일에서는 실질적으로 수행되는 api 통신 수행 <br> apis/apiClient.js <br> apiClient.js에서는 axios.create를 이용하였으며 반복되는 URL 주소와 ContentType등을 분리하여 재사용성을 고려함.     |                                                
+| 장윤신 | - 읽기 : useEffect 사용 todo 페이지 마운트시 getTodos(토큰) 실행 → setTodoList  | 
+| 한지윤 | 자세한 코드 설명 : 한지윤 (https://www.notion.so/354f1ea96f8d4278b85e0c5a977356a9?pvs=21) <br> - api 요청부분을 분리하지 않고 한 컴포넌트 내에서 요청 수행 <br> (생성, 읽기, 수정, 삭제의 api 요청부분이 전부 TodoList.jsx에 있습니다. 가독성 측면에서 좋지 않은 것 같습니다.) <br> - 생성: addTodo : 서버로 새로운 Todo를 보내준다.(POST) <br> - 읽기: fetchTodos : 서버에서 Todo 목록을 불러온다.(GET) <br> - 수정: toggleComplete, modifyTodo(PUT) <br> → 코드 중복을 줄이기 위해 toggleComplete 함수와 modifyTodo 함수의 중복 코드를 분리하여 재사용 가능한 함수로 작성하는게 더 나을 것 같습니다. <br> - 삭제: deleteTodo 함수에서 서버로 삭제 요청 |  
+| 박재우 | customAxios 파일로 Api 요청 부분을 분리. <br> - 생성(POST) : createTodosList로 url = /todos data = todo 로 전달 <br> - 읽기(GET) : getTodosList로 url = /todos 로 전달 <br> todo 페이지로 이동시 useEffect로 <br> —————————————————————————————— <br> loginAxios.defaults.headers.common["Authorization"] = `Bearer ${localStorage.getItem('jwtToken')}`; <br> —————————————————————————————— <br> Authorization을 추가 한 후 실행 <br> - 수정(PUT) : updateTodoAxios로 url = /todos/${id} data = todo, isCompleted로 전달 <br> - 삭제(DELETE) : deleteTodoAxios url = /todos/${id} 로 전        | 
+| 박하린 | [api 요청] <br> - axios instance 생성하여 api 요청 <br> - 토큰 필요한 instance인 경우 axios interceptors를 사용 <br> - 생성 : api/TodoApi 내의 createTodoApi를 요청, todoList에 response data 추가 <br> - 읽기 : /todo로 들어와서 Todo 페이지 렌더링 될 때 api/TodoApi 내의 getTodoApi를 요청, todoList setState <br> - 수정 : api/TodoApi 내의 updateTodoApi 요청하여 수정, map 메소드로 해당 객체 수정 <br> - 삭제 : api/TodoApi 내의 deleteTodoApi 요청하여 삭제, todoList filter하여 setState    |
 
 ### 👍 Best Practice
 
@@ -367,7 +361,6 @@
       "no-var": "error", // var 금지
       "no-multiple-empty-lines": "error", // 여러 줄 공백 금지
       "eqeqeq": "error", // 일치 연산자 사용 필수
-      "dot-notation": "error", // 가능하다면 dot notation 사용
       "no-unused-vars": "error" // 사용하지 않는 변수 금지
     }
   }
