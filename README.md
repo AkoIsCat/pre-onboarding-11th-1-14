@@ -1,6 +1,6 @@
 # 원티드 프리온보딩 11차 1주차 14팀 멘토 과제
 
-<div align=right>2023.06.27 - 2023.06.30</div>
+![image](https://github.com/wanted-pre-onboarding-11th-14team/pre-onboarding-11th-3-14/assets/109052469/1c8eccee-5a37-46df-b810-d22fd375f4ba)
 
 <br>
 
@@ -13,18 +13,30 @@
     <a href="https://pre-onboarding-11th-1-14.vercel.app/"><strong>배포 링크</strong></a> | 
     <a href="https://rhetorical-fuel-734.notion.site/week-1-7ad75cb0565546caaaf9a31ccb6e4a20"><strong>Notion</strong></a>
 </div>
+
 <!-- [배포 링크](https://pre-onboarding-11th-1-14.vercel.app/) | [노션](https://www.notion.so/02987ad7d5244ced91e2c91ea40624dd) -->
+<br />
+<div align=center>2023.06.27 - 2023.06.30</div>
 
 <br>
 
 ## Team
 
-<!-- [장윤신](https://github.com/yun-sin)(팀장), [김은혜](https://github.com/AkoIsCat), [박진현](https://github.com/rondido), [한지윤](https://github.com/jyhan14), [박재우](https://github.com/codingjwp), [박하린](https://github.com/khakaa) -->
-<br>
-
-<div align="center">
-    팀장 <a href="https://github.com/yun-sin">장윤신</a> , <a href="https://github.com/AkoIsCat">김은혜</a> , <a href="https://github.com/rondido">박진현</a> , <a href="https://github.com/jyhan14">한지윤</a> , <a href="https://github.com/codingjwp">박재우</a> , <a href="https://github.com/khakaa">박하린</a>
+<div align='center'>
+<table> 
+  <tbody>
+    <tr>
+      <td align="center"><a href="https://github.com/yun-sin"><img src="https://avatars.githubusercontent.com/u/99275134?v=4"width=100px;" alt=""/><br /><sub><b>장윤신(팀장)</b></sub></a><br /></td>
+      <td align="center";><a href="https://github.com/AkoIsCat"><img src="https://avatars.githubusercontent.com/u/109052469?v=4" width="100px;" alt=""/><br /><sub><b>김은혜</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/rondido"><img src="https://avatars.githubusercontent.com/u/55516901?v=4" width="100px;" alt=""/><br /><sub><b>박진현</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/jyhan14"><img src="https://avatars.githubusercontent.com/u/105530169?v=4" width="100px;" alt=""/><br /><sub><b>한지윤</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/codingjwp"><img src="https://avatars.githubusercontent.com/u/113403155?v=4" width="100px;" alt=""/><br /><sub><b>박재우</b></sub></a><br /></td>
+      <td align="center"><a href="https://github.com/khakaa"><img src="https://avatars.githubusercontent.com/u/73606877?v=4" width="100px;" alt=""/><br /><sub><b>박하린</b></sub></a><br /></td>
+    </tr>
+  </tbody>
+</table>
 </div>
+<br>
 
 <br>
 
