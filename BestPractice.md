@@ -16,10 +16,6 @@
 
 - [Todo API](#todo-api-생성-읽기-수정-삭제)
 
-- [컨벤션](#컨벤션)
-
-- [Eslint, prettier, husky, lint-staged 규칙](#eslint-prettier-husky-lint-staged-규칙)
-
 <br>
 
 ## 사용 라이브러리
