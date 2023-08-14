@@ -17,6 +17,9 @@
 <!-- [배포 링크](https://pre-onboarding-11th-1-14.vercel.app/) | [노션](https://www.notion.so/02987ad7d5244ced91e2c91ea40624dd) -->
 <br />
 <div align=center>2023.06.27 - 2023.06.30</div>
+<br />
+<div align=center>test Id: test@0012</div>
+<div align=center>test Pw: test@0012</div>
 
 <br>
 
