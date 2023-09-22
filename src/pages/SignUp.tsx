@@ -40,6 +40,10 @@ const SignUp = () => {
     navigate('/signin');
   };
 
+  const navigateSignIn = () => {
+    navigate('/signin');
+  };
+
   return (
     <S.AuthWrap>
       <S.Title>회원가입</S.Title>
@@ -71,6 +75,9 @@ const SignUp = () => {
           onClick={onSubmitHandler}
           size='lr'>
           회원가입
+        </Button>
+        <Button type='submit' testname='signin-button' onClick={navigateSignIn} size='lr'>
+          로그인
         </Button>
       </div>
     </S.AuthWrap>
