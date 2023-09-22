@@ -3,6 +3,7 @@ import { getTodosList, updateTodoAxios, deleteTodoAxios } from '../../apis/TodoA
 import { TodoItemGroupProps } from './Todo.style';
 import TodoTrans from './TodoTrans';
 import TodoCreate from './TodoCreate';
+import TodoLogout from './TodoLogout';
 
 export default function TodoItemGroup() {
   const [todoItemData, setTodoItemData] = useState<TodoItemGroupProps[]>([]);
@@ -49,6 +50,7 @@ export default function TodoItemGroup() {
 
   return (
     <>
+      <TodoLogout />
       <TodoCreate todoItemData={todoItemData} setTodoItemData={setTodoItemData} />
       {todoItemData &&
         todoItemData.map((v, i) => (
