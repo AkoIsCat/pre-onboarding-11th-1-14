@@ -10,7 +10,7 @@
 
 <div align="center">
     <p> <a href="https://github.com/walking-sunset/selection-task">사전 과제</a>로 진행한 Todo List에서 동료학습을 통해 Best Practice를 만든 프로젝트입니다. </p>
-    <a href="https://pre-onboarding-11th-1-14.vercel.app/"><strong>배포 링크</strong></a> | 
+    <a href="https://pre-onboarding-11th-1-14-beta.vercel.app/"><strong>배포 링크</strong></a> | 
     <a href="https://rhetorical-fuel-734.notion.site/week-1-7ad75cb0565546caaaf9a31ccb6e4a20"><strong>Notion</strong></a>
 </div>
 
@@ -69,7 +69,6 @@
 
 <br>
 
-
 ## 파트 분담
 
 | 파트                          | 팀원       |
@@ -102,6 +101,7 @@
 <br />
 
 ## Best Practice 선정과정
+
 [Best Practice 선정과정 들여다보기](./BestPractice.md)
 
 <br />
@@ -121,20 +121,20 @@
 
 <div>
 
-| Home Page       |   
-| :-----------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                   Home Page                                                                   |
+| :-------------------------------------------------------------------------------------------------------------------------------------------: |
 | ![image](https://github.com/wanted-pre-onboarding-11th-14team/pre-onboarding-11th-3-14/assets/109052469/d11cb5c9-0e90-45ae-a211-40740b6db864) |
 
 <br />
 
-| Login/Logout Page       |   
-| :-----------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                               Login/Logout Page                                                               |
+| :-------------------------------------------------------------------------------------------------------------------------------------------: |
 | ![image](https://github.com/wanted-pre-onboarding-11th-14team/pre-onboarding-11th-3-14/assets/109052469/4f163685-a238-446e-a180-be47e96e4e6f) |
 
 <br />
 
-| Todo List Page       |   
-| :-----------------------------------------------------------------------------------------------------------------------------------------------: |
+|                                                                Todo List Page                                                                 |
+| :-------------------------------------------------------------------------------------------------------------------------------------------: |
 | ![image](https://github.com/wanted-pre-onboarding-11th-14team/pre-onboarding-11th-3-14/assets/109052469/2d33e357-c621-4887-a1f2-5c8c31f12150) |
 
 </div>
