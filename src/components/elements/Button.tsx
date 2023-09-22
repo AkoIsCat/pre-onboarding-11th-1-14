@@ -3,15 +3,15 @@ import styled, { DefaultTheme } from 'styled-components';
 import { MdAdd } from 'react-icons/md';
 
 /**
- * type : submit (제출), edit (수정), delete (삭제), plus(+버튼)
+ * type : submit (제출), edit (수정), delete (삭제), plus(+버튼), button(로그아웃)
  * size : sm (todo 제출, 수정, 삭제)
  *        md
  *        lr (로그인, 회원가입 버튼)
- * Button 타입 저으이
+ * Button 타입 정의
  */
 interface ButtonProps {
   testname?: string;
-  type: 'submit' | 'edit' | 'delete' | 'plus';
+  type: 'submit' | 'edit' | 'delete' | 'plus' | 'button';
   open?: boolean;
   name?: string;
   size?: 'sm' | 'md' | 'lr';
@@ -111,6 +111,7 @@ const ButtonStyle = styled.button<ButtonProps>`
     else return `8px 12px`;
   }};
 
+  margin: 0 0 10px 0;
   border: 0px;
   border-radius: 0.125rem;
 
